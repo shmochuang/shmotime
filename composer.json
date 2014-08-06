@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"paste/pre": "dev-master",
-		"propaganistas/laravel-phone": "dev-master"
+		"propaganistas/laravel-phone": "dev-master",
+		"ext-intl" : "*"
 	},
 	"autoload": {
 		"classmap": [
