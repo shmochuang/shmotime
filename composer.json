@@ -7,8 +7,7 @@
 		"laravel/framework": "4.2.*",
 		"paste/pre": "dev-master",
 		"propaganistas/laravel-phone": "dev-master",
-		"ext-intl" : "*",
-		"giggsey/libphonenumber-for-php": "6.*@dev"
+		"ext-intl" : "*"
 	},
 	"autoload": {
 		"classmap": [
