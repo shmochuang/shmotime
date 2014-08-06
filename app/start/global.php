@@ -79,3 +79,28 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| FORM MACROS
+|--------------------------------------------------------------------------
+|
+|  date and time
+|
+*/
+
+Form::macro('date', function($name)
+{
+	
+	return '<input type="date" name="'.$name.'">';
+});
+
+Form::macro('time', function($name)
+{
+	
+	return '<input type="time" name="'.$name.'">';
+});

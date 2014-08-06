@@ -1,0 +1,88 @@
+body {
+	font-family: raleway, sans-serif;
+	background-color: #F2EBE8;
+	margin: 2%;
+}
+
+
+/****************************************************
+
+	STYLING THE LINKS
+
+****************************************************/
+.nav{
+	float: left;
+}
+.logout {
+	color: red;
+}
+.newlink {
+	float: right;
+}
+
+
+/****************************************************
+
+	STYLING THE HEADING
+
+****************************************************/
+h1 {
+	color: #4CDDE8;
+	text-align: center;
+	text-shadow: 5px 5px 1px #2494D1;
+	font-family: lobster, sans-serif;
+	font-size: 50px;
+}
+.flash-message {
+	text-align: center;
+	background-color: yellow;
+}
+
+/****************************************************
+
+	STYLING THE TABLE
+
+****************************************************/
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+td, th {
+  border: 1px solid #2494D1;
+  padding: 0.5rem;
+  text-align: left;
+}
+.wrap {
+	word-wrap: break-word;
+}
+.nowrap {
+	white-space: nowrap;
+}
+
+caption {
+	font-weight: bold;
+	font-size: 36px;
+	padding-bottom: 5px;
+}
+
+
+/****************************************************
+
+	STYLING THE LINKS
+
+****************************************************/
+a {
+	color: #4CDDE8;
+}
+a:visited {
+	color: #234540;
+}
+a:hover {
+	text-decoration: none;
+	color: #2494D1;
+	text-shadow: 2px 2px 3px #C7E8EB;
+}
