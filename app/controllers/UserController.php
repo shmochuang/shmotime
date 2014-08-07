@@ -34,8 +34,8 @@ class UserController extends BaseController {
 		# define rules for validation			
 		$rules = array(
 			'email' => 'required|email|unique:users,email',
-			'password' => 'required|min:6',	
-			'phone'     => 'phone:US',
+			'password' => 'required|min:6',
+			'phone' => 'numeric|min:10|max:10'
 		);			
 
 		# validate information		
@@ -49,6 +49,7 @@ class UserController extends BaseController {
 				->withInput()
 				->withErrors($validator);
 		}
+		
 		
 		# get form information, set new user
 		$user = new User;
