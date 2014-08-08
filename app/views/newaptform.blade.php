@@ -12,7 +12,7 @@
 
 <!-- links -->
 
-	{{ HTML::link('/', 'Go back to schedule'); }}
+	
 	<h2>New Appointment</h2>
 
 	<!-- display error messages if any -->
@@ -43,6 +43,7 @@
 	
 	{{ Form::close(); }}
 
+	{{ HTML::link('/', 'Cancel. Go back to schedule'); }}
 
 @stop
 	
