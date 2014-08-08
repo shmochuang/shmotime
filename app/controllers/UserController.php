@@ -35,7 +35,7 @@ class UserController extends BaseController {
 		$rules = array(
 			'email' => 'required|email|unique:users,email',
 			'password' => 'required|min:6',
-			'phone' => 'numeric|min:10|max:11'
+			'phone' => 'numeric|digits:10'
 		);			
 
 		# validate information		
