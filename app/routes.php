@@ -1,4 +1,39 @@
 <?php
+/*
+|--------------------------------------------------------------------------
+| Debugging Routes
+|--------------------------------------------------------------------------
+|
+| debugging with environments, errors, database
+|
+*/
+
+
+Route::get('/get-environment',function() {
+
+    echo "Environment: ".App::environment();
+
+});
+
+
+Route::get('/trigger-error',function() {
+
+    # Class Foobar should not exist, so this should create an error
+    $foo = new Foobar;
+
+});
+
+
+Route::get('mysql-test', function() {
+
+    # Use the DB component to select all the databases
+    $results = DB::select('SHOW DATABASES;');
+
+    # If the "Pre" package is not installed, you should output using print_r instead
+    print_r($results);
+
+});
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +49,6 @@
 Route::get('/', ['before' => 'auth', 'uses' => 'AppointmentsController@getIndex'] );
 
 
-Route::get('mysql-test', function() {
-
-    # Use the DB component to select all the databases
-    $results = DB::select('SHOW DATABASES;');
-
-    # If the "Pre" package is not installed, you should output using print_r instead
-    print_r($results);
-
-});
 
 
 /*
