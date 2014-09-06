@@ -13,7 +13,7 @@ body {
 .nav{
 	float: left;
 }
-.logout {
+a.logout {
 	color: red;
 }
 .newlink {
@@ -87,6 +87,6 @@ a:hover {
 	text-shadow: 2px 2px 3px #C7E8EB;
 }
 
-.logolink a {
+a.logolink {
 	text-decoration: none;
 }
