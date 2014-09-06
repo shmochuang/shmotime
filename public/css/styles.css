@@ -86,3 +86,7 @@ a:hover {
 	color: #2494D1;
 	text-shadow: 2px 2px 3px #C7E8EB;
 }
+
+.logolink {
+	text-decoration: none;
+}
