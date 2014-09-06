@@ -70,6 +70,7 @@ class AppointmentsController extends BaseController
     {
         
         $user = Auth::user();
+        $username = $user->firstname + " " + $user->lastname;
         $day_unique = Input::get('day_unique');
         
         
@@ -94,7 +95,7 @@ class AppointmentsController extends BaseController
 	        $appointment->end_time = Input::get('end_time');
 	        $appointment->instructions = Input::get('instructions');
 	        $appointment->user_id = $user->id;
-	        //$appointment->username = $user->firstname $user->lastname;
+	        $appointment->username = $username;
 	        $appointment->save();
 			return Redirect::to('/')->with('flash_message', 'Appointment added!');
 		}
