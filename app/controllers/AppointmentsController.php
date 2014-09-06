@@ -7,10 +7,37 @@
 class AppointmentsController extends BaseController
 {
 	
+/*
+|--------------------------------------------------------------------------
+| Display Appointment Methods
+|--------------------------------------------------------------------------
+|
+| Index -- display whole schedule
+| List -- display only user's appointments
+|
+*/
+	
     public function getIndex()
     {
         // Show a listing of appointments.
 		$appointments = Appointment::all();
+		$appointments->sort(function($a, $b) {
+	        $a = $a->day;
+		    $b = $b->day;
+	        if ($a === $b) {
+	            return 0;
+	        }
+	        return ($a > $b) ? 1 : -1;
+		});
+		return View::make('schedule', compact('appointments'));
+	}
+	
+	public function getList()
+    {
+        // Show a listing of appointments.
+        $user = Auth::user();
+        $id = $user->id;
+		$appointments = Appointment::where('user_id', '=', $id) ->get();
 		$appointments->sort(function($a, $b) {
 	        $a = $a->day;
 		    $b = $b->day;
@@ -85,17 +112,29 @@ class AppointmentsController extends BaseController
 
     public function getEdit($id)
     {
-        $appointment = Appointment::findOrFail($id);
-        $day_unique = $appointment->day_unique;
-        $start_time = $appointment->start_time;
-        $end_time = $appointment->end_time;
-        $instructions = $appointment->instructions;
-
-		return View::make('editform')
-			->with('day', $day_unique)
-			->with('start_time', $start_time)
-			->with('end_time', $end_time)
-			->with('instructions', $instructions);
+    
+    	// get user
+    	$user = Auth::user();
+    	// get appointment
+    	$appointment = Appointment::findOrFail($id);
+    	
+    	// if appointment belongs to user, go to confirmation page
+        if ($user->id == $appointment->user_id){
+	        
+	        $day_unique = $appointment->day_unique;
+	        $start_time = $appointment->start_time;
+	        $end_time = $appointment->end_time;
+	        $instructions = $appointment->instructions;
+	
+			return View::make('editform')
+				->with('day', $day_unique)
+				->with('start_time', $start_time)
+				->with('end_time', $end_time)
+				->with('instructions', $instructions);
+		}
+		else {
+			return Redirect::to('/')->with('flash_message','Sorry, you can only change your own appointments.');
+		}
     }
 
     public function postEdit($id)
@@ -119,18 +158,32 @@ class AppointmentsController extends BaseController
 
        public function getDelete($id)
     {
+    	// get user
+    	$user = Auth::user();
+    	// get appointment
     	$appointment = Appointment::findOrFail($id);
-        // Show delete confirmation page.
-        return View::make('deleteform');
+    	
+    	// if appointment belongs to user, go to confirmation page
+        if ($user->id == $appointment->user_id){
+	        // Show delete confirmation page.
+	        return View::make('deleteform');
+        }
+        // otherwise, return to schedule and say sorry
+        else{
+	        return Redirect::to('/')->with('flash_message','Sorry, you can only cancel your own appointments.');
+        }
+    	
     }
 
     public function postDelete($id)
     {
-        // Handle the delete confirmation.
+    
+        // find appointment
         $appointment = Appointment::findOrFail($id);
         $appointment->user_id = null;
         $appointment->delete();
 
         return Redirect::to('/')->with('flash_message','Your appointment has been cancelled.');
+        
     }
 }

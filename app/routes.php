@@ -83,17 +83,16 @@ Route::get('/debug', function() {
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Display Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
+| GET INDEX -- DISPLAY FULL SCHEDULE
+| GET LIST -- DISPLAY USER'S APPOINTMENTS
 |
 */
 
 Route::get('/', ['before' => 'auth', 'uses' => 'AppointmentsController@getIndex'] );
-
+Route::get('/list', ['before' => 'auth', 'uses' => 'AppointmentsController@getList'] );
 
 
 

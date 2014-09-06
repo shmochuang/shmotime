@@ -7,7 +7,6 @@
 @section('content')
 	
 	<div class="newlink"><a href="/new" alt="new apt form">Create New Appointment</a></div><br><br>
-	<div class="userlist"><a href="/list" alt="list of user's appointments">Your Appointments</a></div>
 	
 	
 	<table>
