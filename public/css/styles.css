@@ -87,6 +87,6 @@ a:hover {
 	text-shadow: 2px 2px 3px #C7E8EB;
 }
 
-a.logolink {
+a.logolink:visited {
 	text-decoration: none;
 }
