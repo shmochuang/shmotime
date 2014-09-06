@@ -36,7 +36,7 @@
 @yield('content')
 
 	<footer>
-		<a href="/about" alt="About">About</a>|
+		<a href="/about" alt="About">About</a> |
 		<a href="/contact" alt="Contact">Contact</a><br><br>
         © 2014  Elisa J Chuang
     </footer>
