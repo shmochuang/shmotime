@@ -107,3 +107,13 @@ footer {
 footer a{
 	color: black;
 }
+
+/****************************************************
+
+	STYLING THE FOOTER PAGES
+
+****************************************************/
+#about div {
+	clear: all;
+	text-align: center;
+}
