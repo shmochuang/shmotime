@@ -94,6 +94,7 @@ class AppointmentsController extends BaseController
 	        $appointment->end_time = Input::get('end_time');
 	        $appointment->instructions = Input::get('instructions');
 	        $appointment->user_id = $user->id;
+	        $appointment->username = $user->firstname $user->lastname;
 	        $appointment->save();
 			return Redirect::to('/')->with('flash_message', 'Appointment added!');
 		}
