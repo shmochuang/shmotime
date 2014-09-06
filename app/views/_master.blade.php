@@ -21,7 +21,7 @@
     
 	<header >
 		
-		<a href="/" id= 'logolink' alt="schedule"><h1>ShmoTime <img src="<?php echo URL::asset('images/clock.png'); ?>" alt="logo" id="logo"></h1></a><br>
+		<div  id= 'logolink'><a href="/" alt="schedule"><h1>ShmoTime <img src="<?php echo URL::asset('images/clock.png'); ?>" alt="logo" id="logo"></h1></a></div><br>
 		
 		<div class="nav">
 		<!-- check if user is logged in -->
