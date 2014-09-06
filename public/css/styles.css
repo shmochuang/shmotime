@@ -75,6 +75,10 @@ caption {
 	STYLING THE LINKS
 
 ****************************************************/
+a.logolink:visited {
+	text-decoration: none;
+}
+
 a {
 	color: #4CDDE8;
 }
@@ -87,6 +91,4 @@ a:hover {
 	text-shadow: 2px 2px 3px #C7E8EB;
 }
 
-a.logolink:visited {
-	text-decoration: none;
-}
+
