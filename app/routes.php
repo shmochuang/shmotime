@@ -83,6 +83,26 @@ Route::get('/debug', function() {
 
 /*
 |--------------------------------------------------------------------------
+| Footer Routes
+|--------------------------------------------------------------------------
+|
+| GET ABOUT -- DISPLAY ABOUT PAGE
+| GET CONTACT -- DISPLAY CONTACT PAGE
+|
+*/
+
+Route::get('/about', function()
+{
+	return View::make('about');
+});
+Route::get('/contact', function()
+{
+	return View::make('contact');
+});
+
+
+/*
+|--------------------------------------------------------------------------
 | Display Routes
 |--------------------------------------------------------------------------
 |

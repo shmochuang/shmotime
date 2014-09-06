@@ -87,6 +87,19 @@ a:hover {
 #logolink a {
 	text-decoration: none;
 }
+
 #logout a {
 	color: red;
+}
+
+
+/****************************************************
+
+	STYLING THE FOOTER
+
+****************************************************/
+footer {
+	background-color: #4CDDE8;
+	color: black;
+	text-align: center;
 }
