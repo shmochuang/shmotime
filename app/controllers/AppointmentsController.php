@@ -70,7 +70,7 @@ class AppointmentsController extends BaseController
     {
         
         $user = Auth::user();
-        $username = $user->firstname + " " + $user->lastname;
+        $username = $user->firstname." ".$user->lastname;
         $day_unique = Input::get('day_unique');
         
         
