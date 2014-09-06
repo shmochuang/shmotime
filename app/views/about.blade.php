@@ -7,7 +7,6 @@
 
 @section('content')
 
-	<br><br>
 
 	<!-- Description of app -->
 	<div id="about">
