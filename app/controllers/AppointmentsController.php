@@ -120,8 +120,8 @@ class AppointmentsController extends BaseController
     	// get appointment
     	$appointment = Appointment::findOrFail($id);
     	
-    	// if appointment belongs to user, go to confirmation page
-        if ($user->id == $appointment->user_id){
+    	// if appointment belongs to user or user is admin (i.e. usr id = 1), go to confirmation page
+        if ($user->id == $appointment->user_id || $user->id == 1){
 	        
 	        $day_unique = $appointment->day_unique;
 	        $start_time = $appointment->start_time;
@@ -165,8 +165,8 @@ class AppointmentsController extends BaseController
     	// get appointment
     	$appointment = Appointment::findOrFail($id);
     	
-    	// if appointment belongs to user, go to confirmation page
-        if ($user->id == $appointment->user_id){
+    	// if appointment belongs to user or user is admin (i.e. usr id = 1), go to confirmation page
+        if ($user->id == $appointment->user_id || $user->id == 1){
 	        // Show delete confirmation page.
 	        return View::make('deleteform');
         }
