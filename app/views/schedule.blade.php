@@ -26,7 +26,7 @@
 				@foreach($appointments as $appointment)
 					@if (($appointment->day_unique >= date("Y-m-d")))
 						<tr>
-							<td>{{ $appointment->user_id }}</td>
+							<td>{{ $appointment->username }}</td>
 						    <td class="nowrap">{{ date("D M j, Y", strtotime($appointment->day_unique)) }}</td>
 						    <td class="nowrap">{{ date("g:i A", strtotime($appointment->start_time)) }}</td>
 						    <td class="nowrap">{{ date("g:i A", strtotime($appointment->end_time)) }}</td>
