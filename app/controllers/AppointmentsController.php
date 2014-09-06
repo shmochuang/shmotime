@@ -46,7 +46,7 @@ class AppointmentsController extends BaseController
 	        }
 	        return ($a > $b) ? 1 : -1;
 		});
-		return View::make('schedule', compact('appointments'));
+		return View::make('list', compact('appointments'));
 	}
 
     
