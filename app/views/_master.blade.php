@@ -21,12 +21,12 @@
     
 	<header >
 		
-		<a href="/"> <h1>ShmoTime <img src="<?php echo URL::asset('images/clock.png'); ?>" alt="logo" id="logo"></h1></a><br>
+		<a href="/" id="logolink"> <h1>ShmoTime <img src="<?php echo URL::asset('images/clock.png'); ?>" alt="logo" id="logo"></h1></a><br>
 		
 		<div class="nav">
 		<!-- check if user is logged in -->
 		@if(Auth::check())
-		    <div class = 'logout'><a href='/logout' alt="logout">Log out {{ Auth::user()->email; }}</a></div>
+		    <div id = 'logout'><a href='/logout' alt="logout">Log out {{ Auth::user()->email; }}</a></div>
 		@endif
 		</div>
 		
